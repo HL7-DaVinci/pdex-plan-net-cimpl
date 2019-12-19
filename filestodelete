@@ -1,0 +1,18 @@
+extensions/plannet-CAvailableTime-extension.json
+extensions/plannet-TAvailableTime-extension.json
+extensions/plannet-AvailableTime-extension.json
+extensions/plannet-CViaIntermediary-extension.json
+extensions/plannet-TViaIntermediary-extension.json
+extensions/plannet-IdentifierStatus-extension
+extensions/plannet-Proficiency-extension
+extensions/plannet-GeoLocation-extension
+
+
+ig.json:  references       - 3 remaining extensions
+resources/ig.xml:  references
+
+resources/ extensions [CT]AvailableTime, [CT]ViaIntermediary  IdentifierStatus Proficiency GeoLocation 
+
+pages/extensions.json   - 3 remaining extensions
+
+./fhir/guide/pages/extensions.html    -- 3 remaining extensions

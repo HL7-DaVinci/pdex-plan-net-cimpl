@@ -1,0 +1,374 @@
+Grammar:        ContentProfile 1.0
+/*---------------
+Levels of Data Element Support
+1) 1..1 = required 
+2) MS  MS = required if known
+3) MS MS I = conditionally required  MS MS I  --- defer
+4) MS MS I = conditionally required if known  MS MS I  --- defer
+See
+http://wiki.hl7.org/index.php?title=Conformance_Implementation_Manual
+------------------*/
+
+// Required fields don't need to be marked must-support so (currently) they are not included in this list. 
+
+Namespace: plannet
+ 
+Organization:
+ // PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS  
+  OrganizationActive MS
+  OrganizationName MS 
+  OrganizationAlias MS
+  GeoLocation MS
+  PartOf MS 
+  Address MS 
+  Address.Purpose MS
+  Address.Type MS
+  Address.DisplayText MS
+  Address.AddressLine MS
+  Address.City MS
+  Address.State MS
+  Address.PostalCode MS
+  Address.Country MS
+  Address.EffectiveTimePeriod MS
+  OrganizationTelecom.ContactPoint MS 
+  OrganizationTelecom.ContactPoint.TelecomNumberOrAddress MS
+  OrganizationTelecom.ContactPoint.Type MS 
+  OrganizationContact MS
+  OrganizationContact.HumanName MS
+  OrganizationContact MS
+  OrganizationContact.ContactPoint.TelecomNumberOrAddress MS
+  OrganizationContact.ContactPoint.Type MS 
+  OrganizationContact.ContactPoint.Purpose MS
+  OrganizationContact.ContactPoint.PriorityRank MS
+  OrganizationContact.ContactPoint.EffectiveTimePeriod MS
+  TViaIntermediary MS
+  CViaIntermediary MS
+    TAvailableTime MS
+  CAvailableTime MS
+  Qualification MS
+  Description MS
+  OrganizationEndpoint MS 
+
+ Practitioner:
+ // PN_Identifier MS
+  //PN_Identifier.IdentifierStatus MS
+  PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS  
+  PractitionerActive MS
+  PractitionerName.HumanName.Purpose MS
+  PractitionerName.HumanName.Name MS
+  PractitionerName.HumanName.FamilyName MS
+  PractitionerName.HumanName.GivenName MS
+  PractitionerName.HumanName.Prefix MS
+  PractitionerName.HumanName.Suffix MS
+  PractitionerName.HumanName.EffectiveTimePeriod MS
+  PractitionerTelecom MS 
+  PractitionerTelecom.ContactPoint.TelecomNumberOrAddress MS
+  PractitionerTelecom.ContactPoint.Type MS 
+  PractitionerTelecom.ContactPoint.Purpose MS
+  PractitionerTelecom.ContactPoint.PriorityRank MS
+  PractitionerTelecom.ContactPoint.EffectiveTimePeriod MS
+  Address MS 
+  Address MS 
+  Address.Purpose MS
+  Address.Type MS
+  Address.DisplayText MS
+  Address.AddressLine MS
+  Address.City MS
+  Address.State MS
+  Address.PostalCode MS
+  Address.Country MS
+  Address.EffectiveTimePeriod MS
+  Gender MS
+  BirthDate MS 
+  Photo MS
+  PractitionerCommunication MS
+  TViaIntermediary MS
+  TAvailableTime MS
+  GeoLocation MS
+  PractitionerQualification.Practitioner-Qualification-VHDIR MS
+  PractitionerQualification MS
+   PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierUse  MS
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierSystem  MS
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierValue  MS
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierType  MS
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierPeriod  MS
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierAssigner  MS
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierType  MS
+  PractitionerQualification.Code  MS 
+  PractitionerQualification.Period MS 
+  PractitionerQualification.Issuer  MS
+  Accessibility MS
+  Proficiency MS
+
+PractitionerRole:
+ //  PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS  
+  ParticipatingNetwork MS
+  TViaIntermediary MS
+  TAvailableTime MS
+  NAvailableTime MS
+  NewPatients MS
+  NewPatientProfile MS
+  PractitionerRoleQualification MS
+  PractitionerRoleActive MS
+  PractitionerRolePeriod MS
+  Practitioner MS
+  Organization MS 
+  PractitionerRoleCode MS
+  PractitionerRoleSpecialty  MS
+  PractitionerRoleLocation MS
+  PractitionerRoleHealthcareService MS
+  PractitionerRoleTelecom MS 
+  NotAvailable MS
+  NotAvailable.DuringPeriod MS
+  NotAvailable.Description MS
+  NAvailableTime MS
+  NAvailableTime.AllDay   MS
+  NAvailableTime.DaysOfWeek MS
+  NAvailableTime.AvailableStartTime    MS
+  NAvailableTime.AvailableEndTime     MS
+
+
+
+ Location:
+  TViaIntermediary MS
+  TAvailableTime MS
+  NewPatients MS
+  NewPatientProfile MS
+  Accessibility MS
+ // PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS  
+  LocationStatus MS
+  LocationType MS
+  LocationName MS
+  LocationAlias MS
+  LocationDescription MS
+  LocationTelecom MS 
+  LocationAddress MS
+  LocationPhysicalType MS
+  LocationPosition MS
+  ManagingOrganization MS 
+  PartOfLocation MS 
+  LocationHoursOfOperation.AvailableTime MS
+  LocationHoursOfOperation.AvailableTime.AllDay   MS
+  LocationHoursOfOperation.AvailableTime.DaysOfWeek MS
+  LocationHoursOfOperation.AvailableTime.AllDay MS
+  LocationHoursOfOperation.AvailableTime.AvailableStartTime    MS
+   LocationHoursOfOperation.AvailableTime.AvailableEndTime     MS
+
+
+  AvailabilityExceptions MS 
+  LocationEndpoint MS 
+
+
+ OrganizationAffiliation:
+ //PN_Identifier.IdentifierStatus MS
+ //  PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS  
+  OrganizationAffiliationActive MS
+  OrganizationAffiliationPeriod MS
+  OrganizationAffiliationCode MS
+  OrganizationAffiliationSpecialty MS
+  PrimaryOrganization MS
+  ParticipatingOrganization MS 
+  OrganizationAffiliationNetwork MS 
+  OrganizationAffiliationLocation MS
+  OrganizationAffiliationEndpoint MS 
+  OrganizationAffiliationHealthcareService MS
+  OrganizationAffiliationTelecom MS
+  OrganizationAffiliationTelecom.ContactPoint.TelecomNumberOrAddress MS
+  OrganizationAffiliationTelecom.ContactPoint.Type MS 
+  OrganizationAffiliationTelecom.ContactPoint.Purpose MS
+  OrganizationAffiliationTelecom.ContactPoint.PriorityRank MS
+  OrganizationAffiliationTelecom.ContactPoint.EffectiveTimePeriod MS
+ 
+
+ Network:
+  //PN_Identifier.IdentifierStatus MS
+ //  PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS   
+  LocationReference MS
+  PartOf MS
+  NetworkEndpoint MS
+  NetworkActive MS
+  NetworkType MS
+  NetworkName MS
+  NetworkAlias MS
+  NetworkAddress MS
+  NetworkContact MS 
+  NetworkContact.HumanName.Purpose MS
+  NetworkContact.HumanName.Name MS
+  NetworkContact.HumanName.FamilyName MS
+  NetworkContact.HumanName.GivenName MS
+  NetworkContact.HumanName.Prefix MS
+  NetworkContact.HumanName.Suffix MS
+  NetworkContact.HumanName.EffectiveTimePeriod MS
+  NetworkContact.ContactPoint.TelecomNumberOrAddress MS
+  NetworkContact.ContactPoint.Purpose MS
+  NetworkContact.ContactPoint.Type MS 
+  NetworkContact.ContactPoint.PriorityRank MS
+  NetworkContact.ContactPoint.EffectiveTimePeriod MS
+  NetworkEndpoint MS
+ 
+ InsurancePlan:
+   //PN_Identifier.IdentifierStatus MS
+  // PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS 
+  CoverageArea MS
+  InsurancePlanStatus MS
+  InsurancePlanType MS
+  InsurancePlanName MS 
+  InsurancePlanAlias MS 
+  OwnedBy MS
+  AdministeredBy MS
+  CoverageArea MS
+  InsurancePlanContact MS 
+  InsurancePlanContact.ContactPoint MS
+  InsurancePlanContact.ContactPurpose MS
+    InsurancePlanContact.HumanName MS
+  InsurancePlanContact.HumanName.Purpose MS
+  InsurancePlanContact.HumanName.Name MS
+  InsurancePlanContact.HumanName.FamilyName MS
+  InsurancePlanContact.HumanName.GivenName MS
+  InsurancePlanContact.HumanName.Prefix MS
+  InsurancePlanContact.HumanName.Suffix MS
+  InsurancePlanContact.HumanName.EffectiveTimePeriod MS
+  InsurancePlanContact.ContactPoint.TelecomNumberOrAddress MS
+  InsurancePlanContact.ContactPoint.Purpose MS
+  InsurancePlanContact.ContactPoint.Type MS 
+  InsurancePlanContact.ContactPoint.PriorityRank MS
+  InsurancePlanContact.ContactPoint.EffectiveTimePeriod MS
+  InsurancePlanEndpoint MS
+  InsurancePlanNetwork MS
+  TViaIntermediary MS
+  TAvailableTime MS 
+
+
+ 
+ HealthcareService:
+
+  NewPatients MS
+  HealthcareServiceProvidedBy MS
+  HealthcareServiceLocation  MS
+  TAvailableTime MS
+  HealthcareServiceEndpoint MS 
+  //PN_Identifier.IdentifierStatus MS
+ //  PN_Identifier MS
+   PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  PN_Identifier.IdentifierType MS
+   HealthcareServiceCategory MS
+  HealthcareServiceSpecialty MS
+  ExtraDetails MS
+  HealthcareServicePhoto MS
+  HealthcareServiceName MS
+  HealthcareServiceType MS 
+  HealthcareServiceActive MS
+  Comment MS
+  CoverageArea MS 
+  HealthcareServiceTelecom MS
+  HealthcareServiceTelecom.ContactPoint.TelecomNumberOrAddress MS
+  HealthcareServiceTelecom.ContactPoint.Type MS 
+  HealthcareServiceTelecom.ContactPoint.Purpose MS
+  HealthcareServiceTelecom.ContactPoint.PriorityRank MS
+  HealthcareServiceTelecom.ContactPoint.EffectiveTimePeriod MS
+  HealthcareServiceLocation MS
+  ExtraDetails MS
+  TViaIntermediary MS
+  AvailabilityExceptions MS
+  HealthcareServiceCharacteristic MS 
+   HealthcareServiceCommunication MS 
+   HealthcareServiceEligibility  MS
+   HealthcareServiceEligibility.EligibilityID MS
+   HealthcareServiceEligibility.EligibilityCode MS 
+   HealthcareServiceEligibility.ExtraDetails MS 
+   HealthcareServiceCharacteristic MS 
+   AppointmentRequired MS
+   ReferralMethod MS
+   HealthcareServiceProvisionCode MS 
+   Program MS
+   HealthcareServicePhoto MS
+   NAvailableTime MS 
+   NAvailableTime.DaysOfWeek MS
+   NAvailableTime.AllDay MS
+   NAvailableTime.AvailableStartTime MS
+   NAvailableTime.AvailableEndTime MS
+   NotAvailable MS
+   NotAvailable.DuringPeriod MS
+   NotAvailable.Description MS
+
+
+ Endpoint:
+  UseCase MS 
+  //PN_Identifier MS
+  PN_Identifier.IdentifierUse MS
+  PN_Identifier.IdentifierSystem MS
+  PN_Identifier.IdentifierType MS
+  PN_Identifier.IdentifierValue MS
+  PN_Identifier.IdentifierPeriod MS
+  PN_Identifier.IdentifierAssigner MS
+  EndpointStatus MS
+  ConnectionType MS
+  EndpointName MS
+  ManagingOrganization MS
+  CAvailableTime MS
+  CViaIntermediary MS
+  EndpointContact.ContactPoint.TelecomNumberOrAddress MS
+  EndpointContact.ContactPoint.Purpose MS
+  EndpointContact.ContactPoint.PriorityRank MS
+  EndpointContact.ContactPoint.EffectiveTimePeriod MS
+  EndpointContact.ContactPoint.Type MS 
+  Period MS
+  PayloadType MS
+  PayloadMimeType MS
+  EndpointAddress MS
+  EndpointHeader MS
+
+ 

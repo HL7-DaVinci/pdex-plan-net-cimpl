@@ -1,2 +1,4 @@
-# pdex-plan-net-cimpl
-CIMPL inputs used to generate the Davinci PDEX Plan-Net Implementation Guide
+# davinci-pdex-plan-net
+
+DaVinci Directory for Provider and Pharmacy Info.
+https://build.fhir.org/ig/HL7/davinci-pdex-plan-net/#

@@ -1,0 +1,55 @@
+{
+    "projectName": "DaVinci PDEX Plan Net",
+    "projectShorthand": "plannet",
+    "projectURL": "http://hl7.org/fhir/us/davinci-pdex-plan-net",
+    "fhirURL": "http://hl7.org/fhir/us/davinci-pdex-plan-net",
+    "entryTypeURL": "http://hl7.org/fhir/us/davinci-pdex-plan-net",
+    "fhirTarget": "FHIR_R4",
+    "contentProfile": "ig-plannet-cp.txt",
+    "filterStrategy":
+	{
+        "filter": true,
+        "strategy": "namespace",
+        "target": ["plannet"]
+	},
+    "implementationGuide":
+	{
+        "npmName": "hl7.fhir.us.davinci-pdex-plan-net",
+        "version": "0.1.0",
+        "ballotStatus": "STU Ballot",
+		"includeLogicalModels": false,
+		"includeModelDoc": false,
+        "indexContent": "IndexFolder_PlanNet",
+        "examples": "examples_plannet",
+        "extraResources": "searchParameters_plannet",
+        "historyLink": "http://hl7.org/fhir/us/davinci-pdex-plan-net/history.html",
+        "changesLink": "http://gforge.hl7.org/gf/project/fhir/tracker/?action=TrackerItemAdd&amp;tracker_id=677",
+		"primarySelectionStrategy":
+		{
+            "strategy": "namespace",
+			"primary": ["plannet"],
+            "hideSupporting": true
+        },
+        "dependencies": [
+            {
+            "package": "hl7.fhir.uv.vhdir",
+            "version": "current",
+            "name": "VhDir",
+            "location": "https://build.fhir.org/ig/HL7/VhDir",
+            "fileLocation": "./VhDir/package"
+            }
+        ]
+    },
+    "copyrightYear": "2019+",
+    "publisher": "HL7 Financial Management WG",
+    "contact": [
+        {
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "http://www.hl7.org/Special/committees/fm/index.cfm"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,411 @@
+Grammar:	Map 5.1
+Namespace:	plannet
+Target:		FHIR_R4
+
+// THese map to uscore Resources
+Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization:
+  Qualification maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/qualification
+  TAvailableTime maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
+  CAvailableTime maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
+  TAvailableTime maps to telecom.extension 
+  CAvailableTime maps to contact.telecom.extension 
+  TViaIntermediary maps to telecom.extension
+  CViaIntermediary maps to contact.telecom.extension
+  Description  maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/org-description
+  PartOf maps to partOf 
+  GeoLocation maps to address.extension 
+  Address maps to address 
+  Address.Purpose maps to address.use
+  Address.Type maps to address.type
+  Address.DisplayText maps to address.text
+  Address.AddressLine maps to address.line
+  Address.City maps to address.city
+  Address.State maps to address.state
+  Address.PostalCode maps to address.postalCode 
+  Address.Country maps to address.country
+  Address.EffectiveTimePeriod maps to address.period 
+  OrganizationAlias maps to alias 
+  OrganizationEndpoint maps to endpoint 
+  // PN_Identifier maps to identifier 
+    PN_Identifier.IdentifierUse maps to identifier.use 
+  PN_Identifier.IdentifierSystem maps to identifier.system 
+  PN_Identifier.IdentifierValue maps to identifier.value 
+  PN_Identifier.IdentifierType maps to identifier.type 
+  PN_Identifier.IdentifierPeriod maps to identifier.period
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierType maps to identifier.type
+  PN_Identifier.IdentifierStatus maps to identifier.extension 
+  OrganizationActive maps to active 
+  OrganizationName maps to name 
+  GeoLocation maps to address.extension 
+  OrganizationTelecom.ContactPoint maps to telecom 
+  OrganizationTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value
+  OrganizationTelecom.ContactPoint.Type maps to telecom.system
+  OrganizationTelecom.ContactPoint.Purpose maps to telecom.use
+  OrganizationTelecom.ContactPoint.PriorityRank maps to telecom.rank
+  OrganizationTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
+ OrganizationContact maps to contact 
+   OrganizationContact.HumanName maps to contact.name 
+   OrganizationContact.HumanName.GivenName maps to contact.name.given
+  OrganizationContact.HumanName.FamilyName maps to contact.name.family 
+  OrganizationContact.ContactPoint.TelecomNumberOrAddress maps to contact.telecom.value
+  OrganizationContact.ContactPoint.Type maps to contact.telecom.system
+  OrganizationContact.ContactPoint.Purpose maps to contact.telecom.use
+  OrganizationContact.ContactPoint.PriorityRank maps to contact.telecom.rank
+  OrganizationContact.ContactPoint.EffectiveTimePeriod maps to contact.telecom.period
+ 
+
+Practitioner maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner:
+   //  PN_Identifier maps to identifier 
+   PN_Identifier.IdentifierUse maps to identifier.use 
+  PN_Identifier.IdentifierSystem maps to identifier.system 
+  PN_Identifier.IdentifierValue maps to identifier.value 
+  PN_Identifier.IdentifierType maps to identifier.type 
+  PN_Identifier.IdentifierPeriod maps to identifier.period
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierType maps to identifier.type
+  //PN_Identifier.IdentifierStatus maps to identifier.extension 
+  PractitionerName.HumanName maps to name
+  PractitionerActive maps to active 
+  PractitionerCommunication maps to communication 
+  Gender maps to gender 
+  BirthDate maps to birthDate 
+  Photo maps to photo 
+  Address maps to address 
+  Address.Purpose maps to address.use
+  Address.Type maps to address.type
+  Address.DisplayText maps to address.text
+  Address.AddressLine maps to address.line
+  Address.City maps to address.city
+  Address.State maps to address.state
+  Address.PostalCode maps to address.postalCode 
+  Address.Country maps to address.country
+  Address.EffectiveTimePeriod maps to address.period 
+    PractitionerName.HumanName.Purpose maps to name.use 
+  PractitionerName.HumanName.Name maps to name.text 
+  PractitionerName.HumanName.FamilyName maps to name.family 
+  PractitionerName.HumanName.GivenName maps to name.given 
+  PractitionerName.HumanName.Prefix maps to name.prefix 
+  PractitionerName.HumanName.Suffix maps to name.suffix 
+  PractitionerName.HumanName.EffectiveTimePeriod maps to name.period 
+  PractitionerTelecom maps to telecom
+   PractitionerTelecom.ContactPoint.Purpose maps to telecom.use
+  PractitionerTelecom.ContactPoint.Type maps to telecom.system
+   PractitionerTelecom.ContactPoint.PriorityRank maps to telecom.rank
+  PractitionerTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
+  PractitionerTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value 
+  TAvailableTime maps to telecom.extension     
+  TViaIntermediary maps to telecom.extension 
+  GeoLocation maps to address.extension 
+  PractitionerQualification.Practitioner-Qualification-VHDIR maps to qualification.extension 
+  PractitionerQualification maps to qualification 
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierUse maps to qualification.identifier.use 
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierSystem maps to qualification.identifier.system 
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierValue maps to qualification.identifier.value 
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierType maps to qualification.identifier.type 
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierPeriod maps to qualification.identifier.period
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierAssigner maps to qualification.identifier.assigner
+  PractitionerQualification.QualificationIdentifier.PN_Identifier.IdentifierType maps to qualification.identifier.type
+  PractitionerQualification.Practitioner-Qualification-VHDIR maps to qualification.extension 
+  PractitionerQualification maps to qualification 
+   PractitionerQualification.QualificationID maps to qualification.id 
+  PractitionerQualification.Code  maps to qualification.code
+  PractitionerQualification.Period maps to qualification.period
+  PractitionerQualification.Issuer maps to qualification.issuer
+  Proficiency maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/communication-proficiency
+  Proficiency maps to communication.extension  
+  Accessibility maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/accessibility
+  constrain name.family to 1..1
+  constrain name.given to 1..*
+  constrain photo  to 0..1
+  constrain qualification.issuer to 1..1
+
+
+PractitionerRole maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole:
+ NewPatients maps to extension
+  NewPatientProfile maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/newpatientprofile
+   //AvailableTime maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
+   TAvailableTime maps to telecom.extension http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
+   TViaIntermediary maps to telecom.extension 
+ //   PN_Identifier maps to identifier 
+    PN_Identifier.IdentifierUse maps to identifier.use 
+  PN_Identifier.IdentifierSystem maps to identifier.system 
+  PN_Identifier.IdentifierValue maps to identifier.value 
+  PN_Identifier.IdentifierType maps to identifier.type 
+  PN_Identifier.IdentifierPeriod maps to identifier.period
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierType maps to identifier.type
+  PractitionerRoleQualification maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/practitioner-qualification
+  PractitionerRoleActive maps to active
+  PractitionerRoleSpecialty maps to specialty 
+  PractitionerRoleCode maps to code 
+  PractitionerRolePeriod maps to period 
+  PractitionerRoleLocation maps to location 
+  NAvailableTime maps to availableTime
+  NAvailableTime.AllDay maps to availableTime.allDay
+  NAvailableTime.DaysOfWeek maps to availableTime.daysOfWeek 
+  NAvailableTime.AvailableStartTime maps to availableTime.availableStartTime
+  NAvailableTime.AvailableEndTime maps to  availableTime.availableEndTime 
+  NotAvailable maps to notAvailable
+  NotAvailable.Description  maps to notAvailable.description
+  NotAvailable.DuringPeriod maps to notAvailable.during
+  PractitionerRoleTelecom maps to telecom
+  PractitionerRoleTelecom maps to telecom
+   PractitionerRoleTelecom.ContactPoint.Purpose maps to telecom.use
+  PractitionerRoleTelecom.ContactPoint.Type maps to telecom.system
+   PractitionerRoleTelecom.ContactPoint.PriorityRank maps to telecom.rank
+  PractitionerRoleTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
+  PractitionerRoleTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value 
+  Organization maps to organization 
+  ParticipatingNetwork maps to extension  
+  Practitioner maps to practitioner 
+  PractitionerRoleHealthcareService maps to healthcareService 
+   constrain active to 1..1
+ 
+
+Location maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-location:
+  Accessibility maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/accessibility
+   NewPatients maps to extension 
+  NewPatientProfile maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/newpatientprofile
+  TViaIntermediary maps to telecom.extension
+  TAvailableTime maps to telecom.extension 
+ //  PN_Identifier maps to identifier 
+    PN_Identifier.IdentifierUse maps to identifier.use 
+  PN_Identifier.IdentifierSystem maps to identifier.system 
+  PN_Identifier.IdentifierValue maps to identifier.value 
+  PN_Identifier.IdentifierType maps to identifier.type 
+  PN_Identifier.IdentifierPeriod maps to identifier.period
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierType maps to identifier.type
+  LocationStatus maps to status 
+  LocationType maps to type 
+  LocationName maps to name 
+  LocationAlias maps to alias 
+  LocationDescription maps to description 
+  LocationTelecom maps to telecom
+   LocationTelecom.ContactPoint.Purpose maps to telecom.use
+  LocationTelecom.ContactPoint.Type maps to telecom.system
+   LocationTelecom.ContactPoint.PriorityRank maps to telecom.rank
+  LocationTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
+  LocationTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value 
+  LocationAddress maps to address 
+  LocationPhysicalType maps to physicalType 
+  LocationPosition maps to position 
+  LocationHoursOfOperation.AvailableTime maps to hoursOfOperation 
+  LocationHoursOfOperation.AvailableTime.DaysOfWeek maps to hoursOfOperation.daysOfWeek
+  LocationHoursOfOperation.AvailableTime.AllDay maps to hoursOfOperation.allDay
+  LocationHoursOfOperation.AvailableTime.AvailableStartTime maps to hoursOfOperation.openingTime
+  LocationHoursOfOperation.AvailableTime.AvailableEndTime maps to hoursOfOperation.closingTime 
+  AvailabilityExceptions maps to availabilityExceptions 
+  LocationEndpoint maps to endpoint 
+  ManagingOrganization maps to managingOrganization 
+  PartOfLocation maps to partOf 
+  constrain operationalStatus to 0..0
+  constrain mode to 0..0
+
+
+// THese map to R4 Resources
+OrganizationAffiliation maps to OrganizationAffiliation:
+ //  PN_Identifier maps to identifier 
+   PN_Identifier.IdentifierUse maps to identifier.use 
+ PN_Identifier.IdentifierSystem maps to identifier.system 
+ PN_Identifier.IdentifierValue maps to identifier.value 
+ PN_Identifier.IdentifierType maps to identifier.type 
+ PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier.IdentifierAssigner maps to identifier.assigner
+ PN_Identifier.IdentifierType maps to identifier.type
+   PrimaryOrganization maps to organization
+    ParticipatingOrganization maps to participatingOrganization
+    OrganizationAffiliationNetwork maps to network 
+    OrganizationAffiliationLocation maps to location 
+    OrganizationAffiliationHealthcareService maps to healthcareService 
+  OrganizationAffiliationTelecom maps to telecom
+   OrganizationAffiliationTelecom.ContactPoint.Purpose maps to telecom.use
+  OrganizationAffiliationTelecom.ContactPoint.Type maps to telecom.system
+   OrganizationAffiliationTelecom.ContactPoint.PriorityRank maps to telecom.rank
+  OrganizationAffiliationTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
+  OrganizationAffiliationTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value 
+  OrganizationAffiliationActive maps to active 
+  OrganizationAffiliationPeriod maps to period
+  OrganizationAffiliationSpecialty maps to specialty
+  OrganizationAffiliationEndpoint maps to endpoint 
+  OrganizationAffiliationCode maps to code 
+    constrain active to 1..1
+    constrain telecom.system to 1..1
+    constrain  telecom.value to 1..1
+  
+
+Network maps to Organization:
+ //  PN_Identifier maps to identifier 
+   PN_Identifier.IdentifierUse maps to identifier.use 
+ PN_Identifier.IdentifierSystem maps to identifier.system 
+ PN_Identifier.IdentifierValue maps to identifier.value 
+ PN_Identifier.IdentifierType maps to identifier.type 
+ PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier.IdentifierAssigner maps to identifier.assigner
+ PN_Identifier.IdentifierType maps to identifier.type
+ NetworkActive maps to active 
+  NetworkType maps to type 
+  NetworkAddress maps to address 
+  NetworkName maps to name 
+  NetworkAlias maps to alias
+    LocationReference maps to extension
+    PartOf maps to partOf
+    NetworkEndpoint maps to endpoint 
+    NetworkContact maps to contact 
+    PartOf maps to partOf 
+  NetworkContact.HumanName.Purpose maps to contact.name.use 
+  NetworkContact.HumanName.Name maps to contact.name.text 
+  NetworkContact.HumanName.FamilyName maps to contact.name.family 
+  NetworkContact.HumanName.GivenName maps to contact.name.given 
+  NetworkContact.HumanName.Prefix maps to contact.name.prefix 
+  NetworkContact.HumanName.Suffix maps to contact.name.suffix 
+  NetworkContact.HumanName.EffectiveTimePeriod maps to contact.name.period 
+  NetworkContact.ContactPoint.TelecomNumberOrAddress maps to contact.telecom.value 
+  NetworkContact.ContactPoint.Purpose maps to contact.telecom.use
+  NetworkContact.ContactPoint.PriorityRank maps to contact.telecom.rank
+  NetworkContact.ContactPoint.EffectiveTimePeriod maps to contact.telecom.period
+  NetworkContact.ContactPoint.Type maps to contact.telecom.system 
+    constrain contact.name to 1..1
+    constrain contact.name.family to 1..1
+    constrain contact.name.given to 1..*
+    constrain contact.telecom.system to 1..1
+    constrain contact.telecom.value to 1..1
+    constrain telecom to 0..0
+    constrain partOf to 1..1 
+    constrain address.line to 0..4
+
+
+InsurancePlan maps to InsurancePlan:
+  //   Identifier maps to identifier (slice on = type.coding.code; slice strategy = includes)
+ //  PN_Identifier maps to identifier 
+   PN_Identifier.IdentifierUse maps to identifier.use 
+ PN_Identifier.IdentifierSystem maps to identifier.system 
+ PN_Identifier.IdentifierValue maps to identifier.value 
+ PN_Identifier.IdentifierType maps to identifier.type 
+ PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier.IdentifierAssigner maps to identifier.assigner
+ PN_Identifier.IdentifierType maps to identifier.type
+ InsurancePlanStatus maps to status 
+  InsurancePlanType maps to type 
+  InsurancePlanName maps to name 
+  InsurancePlanAlias maps to alias
+  OwnedBy maps to ownedBy 
+  Period maps to period 
+  CoverageArea maps to coverageArea 
+  AdministeredBy maps to administeredBy 
+  InsurancePlanContact maps to contact 
+  InsurancePlanContact.ContactPurpose maps to contact.purpose 
+   InsurancePlanContact.HumanName maps to contact.name 
+   InsurancePlanContact.HumanName.Purpose maps to contact.name.use 
+  InsurancePlanContact.HumanName.Name maps to contact.name.text 
+  InsurancePlanContact.HumanName.FamilyName maps to contact.name.family 
+  InsurancePlanContact.HumanName.GivenName maps to contact.name.given 
+  InsurancePlanContact.HumanName.Prefix maps to contact.name.prefix 
+  InsurancePlanContact.HumanName.Suffix maps to contact.name.suffix 
+  InsurancePlanContact.HumanName.EffectiveTimePeriod maps to contact.name.period 
+  InsurancePlanContact.ContactPoint maps to contact.telecom
+  InsurancePlanContact.ContactPoint.TelecomNumberOrAddress maps to contact.telecom.value 
+  InsurancePlanContact.ContactPoint.Purpose maps to contact.telecom.use
+  InsurancePlanContact.ContactPoint.PriorityRank maps to contact.telecom.rank
+  InsurancePlanContact.ContactPoint.EffectiveTimePeriod maps to contact.telecom.period
+  InsurancePlanContact.ContactPoint.Type maps to contact.telecom.system 
+  TAvailableTime maps to contact.telecom.extension
+  TViaIntermediary  maps to contact.telecom.extension 
+      InsurancePlanNetwork maps to network 
+     InsurancePlanEndpoint maps to endpoint 
+    constrain ownedBy to  1..1
+     constrain plan to 0..0
+     constrain coverage to 0..0
+
+HealthcareService maps to HealthcareService:
+ //HealthcareServiceIdentifier.IdentifierStatus maps to identifier.extension
+ // PN_Identifier maps to identifier 
+   PN_Identifier.IdentifierUse maps to identifier.use 
+ PN_Identifier.IdentifierSystem maps to identifier.system 
+ PN_Identifier.IdentifierValue maps to identifier.value 
+ PN_Identifier.IdentifierType maps to identifier.type 
+ PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier.IdentifierAssigner maps to identifier.assigner
+ PN_Identifier.IdentifierType maps to identifier.type
+ HealthcareServiceProvidedBy maps to providedBy
+ HealthcareServiceLocation maps to location
+ HealthcareServiceType maps to type 
+ NewPatients maps to extension 
+  NAvailableTime maps to availableTime
+  NAvailableTime.DaysOfWeek maps to availableTime.daysOfWeek
+  NAvailableTime.AllDay maps to availableTime.allDay
+  NAvailableTime.AvailableStartTime maps to availableTime.availableStartTime 
+  NAvailableTime.AvailableEndTime maps to availableTime.availableEndTime 
+  TAvailableTime maps to telecom.extension
+  TViaIntermediary  maps to telecom.extension 
+  NotAvailable maps to notAvailable
+  NotAvailable.Description maps to notAvailable.description 
+  NotAvailable.DuringPeriod maps to notAvailable.during 
+
+ //AvailableTime maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
+ //AvailableTime maps to telecom.extension.plannet-availabletime
+ //AvailableTime.Allday maps to telecom.extension.contactpoint-availabletime.allDay 
+ //AvailableTime.AvailableStartTime maps to telecom.extension.plannet-availabletime.availableStartTime 
+ HealthcareServiceEndpoint maps to endpoint
+ HealthcareServiceEligibility maps to eligibility
+ HealthcareServiceEligibility.EligibilityCode maps to eligibility.code
+ HealthcareServiceEligibility.EligibilityID maps to eligibility.id 
+  HealthcareServiceEligibility.ExtraDetails maps to eligibility.comment
+  HealthcareServiceCharacteristic maps to characteristic 
+ HealthcareServiceCommunication maps to communication 
+ HealthcareServiceTelecom maps to telecom 
+  //HealthcareServiceTelecom.ContactPoint.Type maps to telecom.type
+  HealthcareServiceTelecom.ContactPoint.Purpose maps to telecom.use
+  HealthcareServiceTelecom.ContactPoint.PriorityRank maps to telecom.rank
+  HealthcareServiceTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
+  HealthcareServiceTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value 
+    HealthcareServiceTelecom.ContactPoint.Type maps to telecom.system 
+    HealthcareServiceActive maps to active 
+  HealthcareServiceCategory maps to category  
+  CoverageArea maps to coverageArea 
+  HealthcareServiceType maps to type
+  HealthcareServiceSpecialty maps to specialty
+  HealthcareServiceName maps to name 
+  Comment maps to comment 
+  ExtraDetails maps to extraDetails
+  HealthcareServicePhoto maps to photo 
+  HealthcareServiceProvisionCode maps to serviceProvisionCode
+  AppointmentRequired maps to appointmentRequired 
+  ReferralMethod maps to referralMethod 
+  Program maps to program 
+
+  AvailabilityExceptions maps to availabilityExceptions 
+   constrain eligibility.code to  0..1
+//   constrain identifier to 0..*
+
+Endpoint maps to Endpoint:
+    ManagingOrganization maps to managingOrganization 
+    UseCase maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/endpoint-usecase
+    constrain contact.system to 1..1
+    constrain  contact.value to 1..1
+  EndpointContact maps to contact 
+  //PN_Identifier maps to identifier 
+  PN_Identifier.IdentifierUse maps to identifier.use 
+ PN_Identifier.IdentifierSystem maps to identifier.system 
+ PN_Identifier.IdentifierValue maps to identifier.value 
+ PN_Identifier.IdentifierType maps to identifier.type 
+ PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier.IdentifierAssigner maps to identifier.assigner
+ PN_Identifier.IdentifierType maps to identifier.type
+  EndpointContact.ContactPoint.Purpose maps to contact.use
+  EndpointContact.ContactPoint.Type maps to contact.system
+   EndpointContact.ContactPoint.PriorityRank maps to contact.rank
+  EndpointContact.ContactPoint.EffectiveTimePeriod maps to contact.period
+  EndpointContact.ContactPoint.TelecomNumberOrAddress maps to contact.value 
+  EndpointStatus maps to status
+  ConnectionType maps to connectionType
+  EndpointName maps to name 
+  CAvailableTime maps to contact.extension
+  CViaIntermediary maps to contact.extension
+  Period maps to period
+  PayloadType maps to payloadType 
+  PayloadMimeType maps to payloadMimeType
+  EndpointAddress maps to address
+  EndpointHeader maps to header 
+

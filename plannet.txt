@@ -1,0 +1,718 @@
+Grammar:           DataElement 6.0
+Namespace:         plannet
+Description:       "The datatype domain contains definitions of datatypes used in DaVinci PDEX Plan Net."
+Uses:              obf.datatype 
+
+// Organization
+Entry: Organization
+Description: "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice."
+Property: PN_Identifier 0..*
+Property: Qualification 0..*
+Property: TViaIntermediary 0..*
+Property: TAvailableTime 0..*
+Property: CAvailableTime 0..*
+Property: CViaIntermediary 0..*
+Property: Description 0..1
+Property: OrganizationEndpoint 0..*
+Property: OrganizationActive 1..1
+Property: OrganizationName 1..1
+Property: OrganizationAlias 0..*
+Property: GeoLocation 0..*
+Property: PartOf 0..1
+Property: OrganizationTelecom 1..*
+Property: OrganizationContact 0..*
+Property: Address 1..*
+
+Element: OrganizationActive
+Description: "Active"
+Value: boolean
+Element: OrganizationName
+Description: "Name"
+Value: string  
+Element: OrganizationAlias
+Description: "Alias"
+Value: string  
+
+Group: OrganizationContact
+Description: "Contact"
+Property: HumanName 0..1
+Property: ContactPoint 0..*
+
+Element:  OrganizationTelecom
+Description: "Telecom"
+Value: ContactPoint 
+
+Element: CViaIntermediary
+Description: "A reference to an alternative point of contact (plannet-PractitionerRole, plannet-Organization, plannet-OrganizationAffiliation, or plannet-Location) for this organization"
+Value: PractitionerRole or Organization or OrganizationAffiliation or Location
+Element: CAvailableTime
+Description: "AvailableTime indicates when an organization is available for contact"
+Value: concept
+Element: TViaIntermediary
+Description: "A reference to an alternative point of contact (plannet-PractitionerRole, plannet-Organization, plannet-OrganizationAffiliation, or plannet-Location) for this organization"
+Value: PractitionerRole or Organization or OrganizationAffiliation or Location
+//Element: TAvailableTime
+//Description: "AvailableTime indicates when an organization is available for contact"
+//Value: concept
+Element: Qualification
+Description: "Qualification indicates whether the organization has any formal qualifications"
+Value: concept
+Element: ViaIntermediary
+Description: "A reference to an alternative point of contact (plannet-PractitionerRole, plannet-Organization, plannet-OrganizationAffiliation, or plannet-Location) for this organization"
+Value: PractitionerRole or Organization or OrganizationAffiliation or Location
+
+Group: AvailableTime
+Description: "AvailableTime indicates when an organization is available for contact"
+Property: AllDay 1..1
+Property: AvailableStartTime 0..1
+Property: AvailableEndTime 0..1
+Property: DaysOfWeek 0..*
+
+Group: TAvailableTime
+Description: "AvailableTime indicates when an organization is available for contact"
+Property: AllDay 1..1
+Property: AvailableStartTime 0..1
+Property: AvailableEndTime 0..1
+Property: DaysOfWeek 0..*
+
+Group: NAvailableTime
+Description: "AvailableTime indicates when an organization is available for contact"
+Property: AllDay 1..1
+Property: AvailableStartTime 0..1
+Property: AvailableEndTime 0..1
+Property: DaysOfWeek 0..*
+
+
+Element: AvailableStartTime 
+Description: "AvailableStartTime"
+Value:  time 
+Element: AvailableEndTime 
+Description: "AvailableEndTime"
+Value:  time 
+Element: AllDay
+Description: "Allday"
+Value:  boolean
+Element: DaysOfWeek
+Description: "DaysofWeek"
+Value: concept from http://hl7.org/fhir/ValueSet/days-of-week (required)
+
+
+Group: NotAvailable
+Description: "NotAvailable"
+Property: Description 1..1
+Property: DuringPeriod 0..1
+
+Element: DuringPeriod
+Description: "DuringPeriod"
+Value: TimePeriod 
+
+
+Element: GeoLocation
+Description: "GeoLocation indicates the absolute geographic location of an organization’s address"
+Value: concept
+Element: Description
+Description: "Description is a  friendly description of the organization"
+Value: string
+Element: OrganizationEndpoint
+Description: "Technical endpoints providing access to services operated for the organization"
+Value: Endpoint
+
+
+
+// Practitioner
+Entry: Practitioner
+Description: "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
+Property: PN_Identifier 0..*
+Property: TViaIntermediary 0..*
+Property: TAvailableTime 0..*
+Property: GeoLocation 0..*
+Property: Accessibility 0..1
+Property: Proficiency 0..*
+Property: PractitionerActive 1..1
+Property: PractitionerName 1..*
+Property: PractitionerTelecom 0..*
+Property: Address 0..*
+Property: Gender 0..1
+Property: BirthDate 0..1
+Property: Photo 0..1
+Property: PractitionerQualification 0..*
+Property: PractitionerCommunication 0..*
+
+
+Element: Accessibility
+Description: "Accessibilty indicates accessibility options offered by the practitioner (e.g. cultural competence)"
+Value: concept
+Element: Proficiency
+Description: "Proficiency indicates a practitioner’s level of spoken proficiency with the language(s) specified in practitioner.communication"
+Value: concept
+Element: NewPatientProfile
+Description: "New Patient Profile is a description of the type of new patients a practitioner accepts in their role (e.g. pediatric only)"
+Value: concept 
+
+Group: NewPatients
+Description: "New Patients indicates whether the practitioner is accepting new patients in their role"
+Property:  AcceptingPatients 1..1
+Property:  FromNetwork 0..1
+
+Element: AcceptingPatients
+Description: "Boolean flag indicating whether the practitioner is accepting new patients.  This is a component of the NewPatients extension."
+Value: boolean
+
+Element: FromNetwork
+Description: "A reference to a healthcare provider insurance network (plannet-Network) for which the entity is/isn’t accepting new patients. This is a component of the NewPatients extension."
+Value: Network 
+
+
+Element:  PractitionerTelecom
+Description: "Telecom"
+Value: ContactPoint
+Element: PractitionerCommunication
+Description: "Communication"
+Value: concept
+Element: PractitionerActive
+Description: "Active"
+Value: boolean
+Element: PractitionerName
+Description: "Human Name"
+Value: HumanName 
+Element: Gender
+Description: "Gender"
+Value: concept from http://hl7.org/fhir/ValueSet/administrative-gender (required) 
+Element: BirthDate 
+Description: "Birth Date"
+Value: date  
+Element: Photo
+Description: "Photo"
+Value: PhotographicImage 
+Group: PractitionerQualification
+Description: "Certification, licenses, or training pertaining to the provision of care"
+Property: QualificationID 0..1
+Property: Practitioner-Qualification-VHDIR  0..1 
+Property: QualificationIdentifier 0..*
+Property: Code 1..1
+Property: Period 0..1
+Property: Issuer 1..1
+
+Element: QualificationID
+Description: "Unique id for inter-element referencing"
+Value: string 
+Element: Practitioner-Qualification-VHDIR
+Description: "Status, whereValid, and history of a practitioner's qualification"
+Value: concept 
+Element: QualificationIdentifier
+Description: "An identifier for this qualification for the practitioner"
+Value: PN_Identifier
+Element: Issuer
+Description: "Organization that regulates and issues the qualification"
+Value: Organization 
+
+// PractitionerRole
+Entry: PractitionerRole
+Description: "PractitionerRole describes the role a practitioner plays at an organization, including the services they provide, the location(s) where they work, and their availability, electronic endpoints, and other relevant information."
+Property: TViaIntermediary 0..*
+Property: TAvailableTime 0..*
+Property: NewPatients 0..*
+Property: NewPatientProfile 0..*
+Property: PractitionerRoleQualification 0..*
+Property: PN_Identifier 0..*
+Property: PractitionerRolePeriod 0..1
+Property: PractitionerRoleActive 1..1
+Property: Practitioner 1..1
+Property: ParticipatingNetwork 0..*
+Property: Organization 1..1
+Property: PractitionerRoleCode 1..1
+Property: PractitionerRoleSpecialty 0..1
+Property: PractitionerRoleLocation 0..*
+Property: PractitionerRoleHealthcareService 0..*
+Property: PractitionerRoleTelecom 0..*
+Property: NAvailableTime 0..*
+Property: NotAvailable 0..*
+
+Element: ParticipatingNetwork
+Description: "A reference to the healthcare provider insurance networks (plannet-Network) the practitioner participates in through their role"
+Value: Network 
+Element: PractitionerRolePeriod
+Description: "Period"
+Value: EffectiveTimePeriod
+Element:  PractitionerRoleActive 
+Description: "Active"
+Value: boolean
+Element: PractitionerRoleCode 
+Description: "Code"
+Value: concept 
+Element:   PractitionerRoleSpecialty 
+Description: "Specialty"
+Value: concept 
+Element:  PractitionerRoleTelecom
+Description: "Telecom"
+Value: ContactPoint
+Element:  PractitionerRoleLocation
+Description: "Location"
+Value: Location 
+Element:  PractitionerRoleQualification
+Description: "Practitioner's qualifications unique to this role"
+Value: concept   
+Element: PractitionerRoleHealthcareService
+Description: "HealthCareService"
+Value: HealthcareService 
+
+
+Entry: Location
+Description: "A Location is the physical place where healthcare services are provided, practitioners are employed, organizations are based, etc. Locations can range in scope from a room in a building to a geographic region/area."
+Property: PN_Identifier 0..*
+Property: TViaIntermediary 0..*
+Property: TAvailableTime 0..*
+Property: NewPatients 0..*
+Property: NewPatientProfile 0..*
+Property: Accessibility 0..*
+Property: LocationStatus 1..1
+Property: LocationType 0..*
+Property: LocationAlias 0..*
+Property: LocationName 1..1
+Property: LocationDescription 0..1
+Property:  LocationTelecom 0..* 
+Property: LocationAddress 0..1
+Property: LocationPhysicalType 0..1
+Property: LocationPosition 0..1
+Property: ManagingOrganization 0..1
+Property: PartOfLocation 0..1
+Property: LocationHoursOfOperation 0..*
+Property: AvailabilityExceptions 0..1
+Property: LocationEndpoint 0..*
+
+
+Element: LocationHoursOfOperation 
+Description: "Hours of Operation"
+Value: AvailableTime
+Element: PartOfLocation
+Description: "Location part of a Location"
+Value: Location  
+
+Element: LocationPosition
+Description: "Position"
+Value: Geoposition
+Element:  LocationStatus 
+Description: "STatus"
+Value: concept
+Element:  LocationDescription 
+Description: "String"
+Value: string
+Element: LocationType 
+Description: "Type"
+Value: concept 
+Element: LocationCode 
+Description: "Code"
+Value: concept 
+Element:   LocationPhysicalType 
+Description: "Physical Type"
+Value: concept 
+Element:  LocationTelecom
+Description: "Telecom"
+Value: ContactPoint
+Element: LocationEndpoint
+Description: "Technical endpoints providing access to services operated for the organization"
+Value: Endpoint
+Element: LocationAddress
+Description: "Address"
+Value: Address 
+Element: LocationName 
+Description: "Name"
+Value: string
+Element: LocationAlias 
+Description: "Alias"
+Value: string
+
+
+// OrganizationAffiliation
+Entry: OrganizationAffiliation
+Description: "The OrganizationAffiliation resource describes relationships between two or more organizations, including the services one organization provides another, the location(s) where they provide services, the availability of those services, electronic endpoints, and other relevant information."
+Property: PN_Identifier 0..*
+Property: PrimaryOrganization 0..1
+Property: ParticipatingOrganization 0..1
+Property: OrganizationAffiliationNetwork 0..*
+Property: OrganizationAffiliationLocation 0..*
+Property: OrganizationAffiliationEndpoint 0..* 
+Property: OrganizationAffiliationHealthcareService 0..*
+Property:  OrganizationAffiliationActive 1..1
+Property: OrganizationAffiliationPeriod 0..1
+Property: OrganizationAffiliationCode 0..*
+Property:   OrganizationAffiliationSpecialty 0..*
+Property:  OrganizationAffiliationTelecom 0..*
+
+Element:  OrganizationAffiliationActive 
+Description: "Active"
+Value: boolean
+Element: OrganizationAffiliationPeriod 
+Description: "Identifier Period"
+Value: TimePeriod
+Element: OrganizationAffiliationCode 
+Description: "Code"
+Value: concept 
+Element:   OrganizationAffiliationSpecialty 
+Description: "Specialty"
+Value: concept 
+Element:  OrganizationAffiliationTelecom
+Description: "Telecom"
+Value: ContactPoint
+Element: OrganizationAffiliationEndpoint
+Description: "Technical endpoints providing access to services operated for the organization"
+Value: Endpoint
+
+
+
+Element: PrimaryOrganization
+Description: "Organization where the role is available (primary organization/has members)."
+Value: Organization
+
+//Element: Organization
+//Description: "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice."
+//Value: Organization
+Element: ParticipatingOrganization
+Description: "The Participating Organization provides/performs the role(s) defined by the code to the Primary Organization (e.g. providing services or is a member of)."
+Value: Organization
+Element: OrganizationAffiliationNetwork
+Description: "Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined)."
+Value: Network
+Element: OrganizationAffiliationLocation
+Description: "The location(s) at which the role occurs."
+Value: Location
+Element: OrganizationAffiliationHealthcareService
+Description: "Healthcare services provided through the role."
+Value: HealthcareService
+
+// Network
+Entry: Network
+Description: "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals that deliver a set of services across a geography through health insurance products/plans. A network is typically owned by a payer.
+
+In the PlanNet IG, individuals and organizations are represented as participants in a PLan-Net Network through the practitionerRole and Plan-Net-organizationAffiliation resources, respectively."
+Property: PN_Identifier 0..*
+Property: LocationReference 0..*
+Property: PartOf 1..1
+Property: NetworkEndpoint 0..*
+Property: NetworkContact 0..*
+Property: NetworkActive 1..1
+Property: NetworkType 0..*
+Property: NetworkName 0..1
+Property: NetworkAlias 0..*
+Property: NetworkAddress 0..1
+
+Element: LocationReference
+Description: "A reference to  a Location resource (plannet-Location) defining the coverage area of a health insurance provider network"
+Value: Location 
+Element: PartOf
+Description: "The organization that 'owns' this network (typically a payer)"
+Value: Organization 
+Element: NetworkEndpoint
+Description: "Technical endpoints providing access to services operated for the organization"
+Value: Endpoint
+Element: ManagingOrganization
+Description: "Organization that manages this endpoint (might not be the organization that exposes the endpoint)"
+Value: Organization
+Element: NetworkAddress
+Description: "Address"
+Value: Address 
+
+Group: NetworkContact
+Description: "Plan Contact"
+Property: ContactPurpose 0..1
+Property: HumanName 0..1
+Property: ContactPoint 0..*
+Property: Address  0..1
+
+Element: NetworkActive
+Description: "Active"
+Value: boolean
+Element: NetworkType
+Description: "Type"
+Value: concept
+Element: NetworkName 
+Description: "Name"
+Value: string
+Element: NetworkAlias 
+Description: "Alias"
+Value: string
+
+
+
+// InsurancePlan
+Entry: InsurancePlan
+Description: "A InsurancePlan is a discrete package of health insurance coverage benefits that are offered under a particular network type. A given payer’s products typically differ by network type and/or covered benefits. A plan pairs a product’s covered benefits with the particular cost sharing structure offered to a consumer. A given product may comprise multiple plans (i.e. each plan offers different cost sharing requirements for the same set of covered benefits).
+
+InsurancePlan describes a health insurance offering comprised of a list of covered benefits (i.e. the product), costs associated with those benefits (i.e. the plan), and additional information about the offering, such as who it is owned and administered by, a coverage area, contact information, etc."
+Property: PN_Identifier 0..*
+Property: InsurancePlanStatus 1..1
+Property: InsurancePlanType 0..1
+Property: InsurancePlanName 0..1
+Property: InsurancePlanAlias 0..*
+Property:  Period 0..1
+Property: CoverageArea 0..*
+Property: OwnedBy 1..1
+Property: AdministeredBy 1..1
+Property: InsurancePlanContact 0..*
+Property: InsurancePlanEndpoint 0..*
+Property: InsurancePlanNetwork 0..*
+Property: TAvailableTime 0..*
+Property: TViaIntermediary 0..*
+
+Element: InsurancePlanEndpoint
+Description: "The technical endpoints providing access to services operated for the health insurance product."
+Value: Endpoint
+
+Element: InsurancePlanPurpose
+Description: "Reference to the network included in the health insurance product."
+Value: concept from http://hl7.org/fhir/ValueSet/contactentity-type (extensible)
+
+Element: InsurancePlanNetwork
+Description: "Reference to the network included in the health insurance product."
+Value: Network
+
+Element: CoverageArea
+Description: "CoverageArea is the geographic region in which a health insurance product's benefits apply."
+Value: Location 
+
+Element: OwnedBy
+Description: "OwnedBy is the entity that is providing the health insurance product and underwriting the risk. This is typically an insurance carriers, other third-party payers, or health plan sponsors comonly referred to as 'payers'."
+Value: Organization
+
+Element: AdministeredBy
+Description: "AdministeredBy is an organization which administer other services such as underwriting, customer service and/or claims processing on behalf of the health insurance product owner."
+Value: Organization 
+
+Group: InsurancePlanContact
+Description: "Plan Contact"
+Property: ContactPurpose 0..1
+Property: HumanName 0..1
+Property: ContactPoint 0..*
+Property: Address  0..1
+
+Element: InsurancePlanContactName
+Description: "Name"
+Value: HumanName 
+
+Element: ContactPurpose 
+Description: "Purpose"
+Value: concept 
+
+Element: InsurancePlanStatus
+Description: "Status"
+Value: concept
+Element: InsurancePlanType
+Description: "Type"
+Value: concept
+Element: InsurancePlanName 
+Description: "Name"
+Value: string
+Element: InsurancePlanAlias 
+Description: "Alias"
+Value: string
+
+
+// HealthcareService
+Entry: HealthcareService
+Description: "The HealthCareService  resource typically describes services offered by an organization/practitioner at a location. The resource may be used to encompass a variety of services covering the entire healthcare spectrum, including promotion, prevention, diagnstics, hospital and ambulatory care, home care, long-term care, and other health-related and community services."
+Property: NewPatients 1..1
+Property: PN_Identifier 0..*
+Property:  HealthcareServiceActive 1..1
+Property:  HealthcareServiceProvidedBy 0..1
+Property:  HealthcareServiceCategory 0..*
+Property:  HealthcareServiceType 0..*
+Property: HealthcareServiceSpecialty 0..*
+Property: HealthcareServiceName 0..1
+Property: Comment 0..1
+Property: ExtraDetails 0..1
+Property: HealthcareServicePhoto 0..1
+Property: HealthcareServiceTelecom 0..*
+Property: TViaIntermediary 0..*
+Property: CoverageArea 0..*
+Property: HealthcareServiceProvisionCode 0..*
+Property: HealthcareServiceLocation 0..*
+Property: NAvailableTime 0..*
+Property: TAvailableTime 0..*
+Property: HealthcareServiceEndpoint 0..*
+Property: HealthcareServiceEligibility 0..*
+Property: HealthcareServiceCharacteristic 0..*
+Property: HealthcareServiceCommunication 0..*
+Property: AvailabilityExceptions 0..1
+Property: Program 0..*
+Property: ReferralMethod 0..*
+Property: AppointmentRequired 0..1
+Property: NotAvailable 0..*
+
+
+Group: PN_Identifier
+Description: "Identifier"
+Property:  IdentifierStatus 1..1
+Property:  IdentifierUse 0..1
+Property:  IdentifierType 0..1
+Property:  IdentifierSystem 0..1
+Property:  IdentifierValue 0..1
+Property:  IdentifierPeriod 0..1
+Property:  IdentifierAssigner 0..1
+
+//Group: PlN_Identifier
+//Parent: Identifier 
+//Description: "PlN Identifier"
+//Property: IdentifierAssigner 0..1
+
+Element: IdentifierStatus
+Description: "An extension indicating the status of an identifier. Appropriate codes include: active, inactive, issued in error, revoked, pending, or unknown"
+Value: concept 
+
+Element: IdentifierUse
+Description: "Identifier Use"
+Value: concept 
+
+Element: IdentifierType
+Description: "IdentifierType"
+Value: concept 
+
+Element:  IdentifierSystem
+Description: "Identifier System"
+Value: uri 
+Element:  IdentifierValue
+Description: "Identifier Value Code"
+Value: string
+
+Element: IdentifierPeriod
+Description: "Identifier Period"
+Value: TimePeriod
+
+Element:  IdentifierAssigner
+Description: "IdentifierAssigner"
+Value: Organization 
+Element:  HealthcareServiceActive
+Description: "Active"
+Value: boolean
+Element:  HealthcareServiceCategory
+Description: "Category"
+Value: concept
+Element:  HealthcareServiceType
+Description: "Type"
+Value: concept
+Element: HealthcareServiceCommunication
+Description: "Communication"
+Value: concept
+Element: HealthcareServiceSpecialty
+Description: "Specialty"
+Value: concept
+Element: HealthcareServiceName
+Description: "Name"
+Value: string
+Element: HealthcareServicePhoto
+Description: "Photo"
+Value: PhotographicImage   
+Element: Comment
+Description: "Comment"
+Value: string
+Element: ExtraDetails
+Description: "Extra Details"
+Value: markdown
+Element: HealthcareServiceTelecom
+Description: "Telecom"
+Value: ContactPoint
+Element: HealthcareServiceProvisionCode
+Description: "ServiceProvisionCode"
+Value: concept
+Element: AvailabilityExceptions
+Description: "AvailabilityExceptions"
+Value: string
+
+Element: Program
+Description: "Program"
+Value: concept 
+Element: ReferralMethod 
+Description: "Referral Method"
+Value: concept 
+Element: AppointmentRequired 
+Description: "AppointmentRequired"
+Value: boolean 
+
+Group: HealthcareServiceEligibility
+Description: "Specific eligibility requirements required to use the service"
+Property: EligibilityID  0..*
+Property: EligibilityCode 0..*
+Property: ExtraDetails 0..*
+
+Element: EligibilityID
+Description: "Unique id for inter-element referencing"
+Value: string
+
+Element: EligibilityCode
+Description: "Coded eligibilty requirements for a service."
+Value: concept 
+
+Element: HealthcareServiceCharacteristic
+Description: "indicate the characteristics of a healthcare service."
+Value: concept 
+
+
+Element: HealthcareServiceLocation
+Description: "The location(s) at which the role occurs."
+Value: Location
+
+Element: HealthcareServiceEndpoint
+Description: "Technical endpoints providing access to electronic services operated for the healthcare service"
+Value: Endpoint
+
+Element: HealthcareServiceProvidedBy
+Description: "The organization that provides this healthcare service."
+Value: Organization 
+
+// Endpoint
+Entry: Endpoint
+Description: "The technical details of an endpoint that can be used for electronic services, such as for web services providing XDS.b or a REST endpoint for another FHIR server. This may include any security context information."
+Property: PN_Identifier 0..*
+Property: UseCase 0..*
+Property: ManagingOrganization 0..1
+Property: EndpointStatus  1..1
+Property: ConnectionType 1..1
+Property: EndpointName 0..1
+Property: CAvailableTime 0..*
+Property: CViaIntermediary 0..1
+Property: EndpointContact 0..1
+Property: Period 0..1
+Property: PayloadType 1..*
+Property: PayloadMimeType 0..*
+Property: EndpointAddress 1..1
+Property: EndpointHeader 0..*
+
+
+Element: UseCase
+Description: "UseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+Value: concept 
+
+Element: EndpointStatus
+Description: "Status"
+Value: concept
+
+Element: ConnectionType
+Description: "Connection Type"
+Value: concept 
+
+Element: EndpointName
+Description: "Name"
+Value: string 
+
+Element: EndpointContact
+Description: "Contact"
+Value: ContactPoint
+
+Element: Period
+Description: "Period"
+Value: TimePeriod
+
+Element: PayloadType
+Description: "Payload type"
+Value: concept
+
+Element: PayloadMimeType
+Description: "Payload Mime Type"
+Value: concept
+
+Element: EndpointAddress
+Description: "Address"
+Value: uri 
+
+Element: EndpointHeader
+Description: "Header"
+Value: string 
