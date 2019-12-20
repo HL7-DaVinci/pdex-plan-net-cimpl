@@ -3,6 +3,8 @@ Namespace:         plannet
 Description:       "The datatype domain contains definitions of datatypes used in DaVinci PDEX Plan Net."
 Uses:              obf.datatype 
 
+CodeSystem:  	ORGTYPE =  http://hl7.org/fhir/ValueSet/organization-type
+
 // Organization
 Entry: Organization
 Description: "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice."
@@ -11,7 +13,7 @@ Property: Qualification 0..*
 Property: TViaIntermediary 0..*
 Property: TAvailableTime 0..*
 Property: CAvailableTime 0..*
-Property: CViaIntermediary 0..*
+Property: ViaIntermediary 0..*
 Property: Description 0..1
 Property: OrganizationEndpoint 0..*
 Property: OrganizationActive 1..1
@@ -42,9 +44,6 @@ Element:  OrganizationTelecom
 Description: "Telecom"
 Value: ContactPoint 
 
-Element: CViaIntermediary
-Description: "A reference to an alternative point of contact (plannet-PractitionerRole, plannet-Organization, plannet-OrganizationAffiliation, or plannet-Location) for this organization"
-Value: PractitionerRole or Organization or OrganizationAffiliation or Location
 Element: CAvailableTime
 Description: "AvailableTime indicates when an organization is available for contact"
 Value: concept
@@ -127,7 +126,7 @@ Property: TViaIntermediary 0..*
 Property: TAvailableTime 0..*
 Property: GeoLocation 0..*
 Property: Accessibility 0..1
-Property: Proficiency 0..*
+Property: Communication-Proficiency 0..*
 Property: PractitionerActive 1..1
 Property: PractitionerName 1..*
 Property: PractitionerTelecom 0..*
@@ -142,8 +141,8 @@ Property: PractitionerCommunication 0..*
 Element: Accessibility
 Description: "Accessibilty indicates accessibility options offered by the practitioner (e.g. cultural competence)"
 Value: concept
-Element: Proficiency
-Description: "Proficiency indicates a practitioner’s level of spoken proficiency with the language(s) specified in practitioner.communication"
+Element: Communication-Proficiency
+Description: "Communications Proficiency indicates a practitioner’s level of spoken proficiency with the language(s) specified in practitioner.communication"
 Value: concept
 Element: NewPatientProfile
 Description: "New Patient Profile is a description of the type of new patients a practitioner accepts in their role (e.g. pediatric only)"
@@ -218,7 +217,7 @@ Property: PN_Identifier 0..*
 Property: PractitionerRolePeriod 0..1
 Property: PractitionerRoleActive 1..1
 Property: Practitioner 1..1
-Property: ParticipatingNetwork 0..*
+Property: Network-reference 0..*
 Property: Organization 1..1
 Property: PractitionerRoleCode 1..1
 Property: PractitionerRoleSpecialty 0..1
@@ -228,7 +227,7 @@ Property: PractitionerRoleTelecom 0..*
 Property: NAvailableTime 0..*
 Property: NotAvailable 0..*
 
-Element: ParticipatingNetwork
+Element: Network-reference
 Description: "A reference to the healthcare provider insurance networks (plannet-Network) the practitioner participates in through their role"
 Value: Network 
 Element: PractitionerRolePeriod
@@ -386,7 +385,7 @@ Description: "A Network refers to a healthcare provider insurance network. A hea
 
 In the PlanNet IG, individuals and organizations are represented as participants in a PLan-Net Network through the practitionerRole and Plan-Net-organizationAffiliation resources, respectively."
 Property: PN_Identifier 0..*
-Property: LocationReference 0..*
+Property: Location-reference 0..*
 Property: PartOf 1..1
 Property: NetworkEndpoint 0..*
 Property: NetworkContact 0..*
@@ -396,7 +395,7 @@ Property: NetworkName 0..1
 Property: NetworkAlias 0..*
 Property: NetworkAddress 0..1
 
-Element: LocationReference
+Element: Location-reference
 Description: "A reference to  a Location resource (plannet-Location) defining the coverage area of a health insurance provider network"
 Value: Location 
 Element: PartOf
@@ -424,7 +423,8 @@ Description: "Active"
 Value: boolean
 Element: NetworkType
 Description: "Type"
-Value: concept
+Value: concept 
+  Value[concept] = ORGTYPE#pay "Payer"
 Element: NetworkName 
 Description: "Name"
 Value: string
@@ -668,7 +668,7 @@ Property: EndpointStatus  1..1
 Property: ConnectionType 1..1
 Property: EndpointName 0..1
 Property: CAvailableTime 0..*
-Property: CViaIntermediary 0..1
+Property: ViaIntermediary 0..1
 Property: EndpointContact 0..1
 Property: Period 0..1
 Property: PayloadType 1..*

@@ -10,7 +10,7 @@ Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-org
   TAvailableTime maps to telecom.extension 
   CAvailableTime maps to contact.telecom.extension 
   TViaIntermediary maps to telecom.extension
-  CViaIntermediary maps to contact.telecom.extension
+  ViaIntermediary maps to contact.telecom.extension
   Description  maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/org-description
   PartOf maps to partOf 
   GeoLocation maps to address.extension 
@@ -112,8 +112,7 @@ Practitioner maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-pra
   PractitionerQualification.Code  maps to qualification.code
   PractitionerQualification.Period maps to qualification.period
   PractitionerQualification.Issuer maps to qualification.issuer
-  Proficiency maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/communication-proficiency
-  Proficiency maps to communication.extension  
+  Communication-Proficiency maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/communication-proficiency
   Accessibility maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/accessibility
   constrain name.family to 1..1
   constrain name.given to 1..*
@@ -157,7 +156,7 @@ PractitionerRole maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core
   PractitionerRoleTelecom.ContactPoint.EffectiveTimePeriod maps to telecom.period
   PractitionerRoleTelecom.ContactPoint.TelecomNumberOrAddress maps to telecom.value 
   Organization maps to organization 
-  ParticipatingNetwork maps to extension  
+  Network-reference maps to extension  
   Practitioner maps to practitioner 
   PractitionerRoleHealthcareService maps to healthcareService 
    constrain active to 1..1
@@ -249,7 +248,7 @@ Network maps to Organization:
   NetworkAddress maps to address 
   NetworkName maps to name 
   NetworkAlias maps to alias
-    LocationReference maps to extension
+    Location-reference maps to extension
     PartOf maps to partOf
     NetworkEndpoint maps to endpoint 
     NetworkContact maps to contact 
@@ -350,7 +349,7 @@ HealthcareService maps to HealthcareService:
  HealthcareServiceEndpoint maps to endpoint
  HealthcareServiceEligibility maps to eligibility
  HealthcareServiceEligibility.EligibilityCode maps to eligibility.code
- HealthcareServiceEligibility.EligibilityID maps to eligibility.id 
+ //HealthcareServiceEligibility.EligibilityID maps to eligibility.id 
   HealthcareServiceEligibility.ExtraDetails maps to eligibility.comment
   HealthcareServiceCharacteristic maps to characteristic 
  HealthcareServiceCommunication maps to communication 
@@ -402,7 +401,7 @@ Endpoint maps to Endpoint:
   ConnectionType maps to connectionType
   EndpointName maps to name 
   CAvailableTime maps to contact.extension
-  CViaIntermediary maps to contact.extension
+  ViaIntermediary maps to contact.extension
   Period maps to period
   PayloadType maps to payloadType 
   PayloadMimeType maps to payloadMimeType

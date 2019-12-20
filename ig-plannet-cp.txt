@@ -49,7 +49,7 @@ Organization:
   OrganizationContact.ContactPoint.PriorityRank MS
   OrganizationContact.ContactPoint.EffectiveTimePeriod MS
   TViaIntermediary MS
-  CViaIntermediary MS
+  ViaIntermediary MS
     TAvailableTime MS
   CAvailableTime MS
   Qualification MS
@@ -111,7 +111,7 @@ Organization:
   PractitionerQualification.Period MS 
   PractitionerQualification.Issuer  MS
   Accessibility MS
-  Proficiency MS
+  Communication-Proficiency MS
 
 PractitionerRole:
  //  PN_Identifier MS
@@ -122,7 +122,7 @@ PractitionerRole:
   PN_Identifier.IdentifierPeriod MS
   PN_Identifier.IdentifierAssigner MS
   PN_Identifier.IdentifierType MS  
-  ParticipatingNetwork MS
+  Network-reference MS
   TViaIntermediary MS
   TAvailableTime MS
   NAvailableTime MS
@@ -224,7 +224,7 @@ PractitionerRole:
   PN_Identifier.IdentifierPeriod MS
   PN_Identifier.IdentifierAssigner MS
   PN_Identifier.IdentifierType MS   
-  LocationReference MS
+  Location-reference MS
   PartOf MS
   NetworkEndpoint MS
   NetworkActive MS
@@ -326,9 +326,9 @@ PractitionerRole:
   HealthcareServiceCharacteristic MS 
    HealthcareServiceCommunication MS 
    HealthcareServiceEligibility  MS
-   HealthcareServiceEligibility.EligibilityID MS
-   HealthcareServiceEligibility.EligibilityCode MS 
-   HealthcareServiceEligibility.ExtraDetails MS 
+   //HealthcareServiceEligibility.EligibilityID MS
+   //HealthcareServiceEligibility.EligibilityCode MS 
+  // HealthcareServiceEligibility.ExtraDetails MS 
    HealthcareServiceCharacteristic MS 
    AppointmentRequired MS
    ReferralMethod MS
@@ -359,7 +359,7 @@ PractitionerRole:
   EndpointName MS
   ManagingOrganization MS
   CAvailableTime MS
-  CViaIntermediary MS
+  ViaIntermediary MS
   EndpointContact.ContactPoint.TelecomNumberOrAddress MS
   EndpointContact.ContactPoint.Purpose MS
   EndpointContact.ContactPoint.PriorityRank MS
