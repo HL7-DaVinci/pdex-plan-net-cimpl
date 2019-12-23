@@ -314,8 +314,6 @@ InsurancePlan maps to InsurancePlan:
       InsurancePlanNetwork maps to network 
      InsurancePlanEndpoint maps to endpoint 
     constrain ownedBy to  1..1
-     constrain plan to 0..*
-     constrain coverage to 0..*
 
 HealthcareService maps to HealthcareService:
  //HealthcareServiceIdentifier.IdentifierStatus maps to identifier.extension
