@@ -27,6 +27,7 @@ Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-org
   OrganizationAlias maps to alias 
   OrganizationEndpoint maps to endpoint 
   // PN_Identifier maps to identifier 
+  //PN_Identifier.IdentifierID maps to identifier.id 
     PN_Identifier.IdentifierUse maps to identifier.use 
   PN_Identifier.IdentifierSystem maps to identifier.system 
   PN_Identifier.IdentifierValue maps to identifier.value 
@@ -57,6 +58,7 @@ Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-org
 
 Practitioner maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner:
    //  PN_Identifier maps to identifier 
+  //PN_Identifier.IdentifierID maps to identifier.id 
    PN_Identifier.IdentifierUse maps to identifier.use 
   PN_Identifier.IdentifierSystem maps to identifier.system 
   PN_Identifier.IdentifierValue maps to identifier.value 
@@ -127,6 +129,7 @@ PractitionerRole maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core
    TAvailableTime maps to telecom.extension http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
    TViaIntermediary maps to telecom.extension 
  //   PN_Identifier maps to identifier 
+ //PN_Identifier.IdentifierID maps to identifier.id 
     PN_Identifier.IdentifierUse maps to identifier.use 
   PN_Identifier.IdentifierSystem maps to identifier.system 
   PN_Identifier.IdentifierValue maps to identifier.value 
@@ -169,6 +172,7 @@ Location maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-locatio
   TViaIntermediary maps to telecom.extension
   TAvailableTime maps to telecom.extension 
  //  PN_Identifier maps to identifier 
+  //PN_Identifier.IdentifierID maps to identifier.id 
     PN_Identifier.IdentifierUse maps to identifier.use 
   PN_Identifier.IdentifierSystem maps to identifier.system 
   PN_Identifier.IdentifierValue maps to identifier.value 
@@ -206,6 +210,7 @@ Location maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-locatio
 // THese map to R4 Resources
 OrganizationAffiliation maps to OrganizationAffiliation:
  //  PN_Identifier maps to identifier 
+ //PN_Identifier.IdentifierID maps to identifier.id 
    PN_Identifier.IdentifierUse maps to identifier.use 
  PN_Identifier.IdentifierSystem maps to identifier.system 
  PN_Identifier.IdentifierValue maps to identifier.value 
@@ -236,6 +241,7 @@ OrganizationAffiliation maps to OrganizationAffiliation:
 
 Network maps to Organization:
  //  PN_Identifier maps to identifier 
+ //PN_Identifier.IdentifierID maps to identifier.id 
    PN_Identifier.IdentifierUse maps to identifier.use 
  PN_Identifier.IdentifierSystem maps to identifier.system 
  PN_Identifier.IdentifierValue maps to identifier.value 
@@ -278,6 +284,7 @@ Network maps to Organization:
 InsurancePlan maps to InsurancePlan:
   //   Identifier maps to identifier (slice on = type.coding.code; slice strategy = includes)
  //  PN_Identifier maps to identifier 
+ //PN_Identifier.IdentifierID maps to identifier.id 
    PN_Identifier.IdentifierUse maps to identifier.use 
  PN_Identifier.IdentifierSystem maps to identifier.system 
  PN_Identifier.IdentifierValue maps to identifier.value 
@@ -318,7 +325,8 @@ InsurancePlan maps to InsurancePlan:
 HealthcareService maps to HealthcareService:
  //HealthcareServiceIdentifier.IdentifierStatus maps to identifier.extension
  // PN_Identifier maps to identifier 
-   PN_Identifier.IdentifierUse maps to identifier.use 
+ //PN_Identifier.IdentifierID maps to identifier.id 
+ PN_Identifier.IdentifierUse maps to identifier.use 
  PN_Identifier.IdentifierSystem maps to identifier.system 
  PN_Identifier.IdentifierValue maps to identifier.value 
  PN_Identifier.IdentifierType maps to identifier.type 
@@ -383,6 +391,7 @@ Endpoint maps to Endpoint:
     constrain  contact.value to 1..1
   EndpointContact maps to contact 
   //PN_Identifier maps to identifier 
+ //PN_Identifier.IdentifierID maps to identifier.id 
   PN_Identifier.IdentifierUse maps to identifier.use 
  PN_Identifier.IdentifierSystem maps to identifier.system 
  PN_Identifier.IdentifierValue maps to identifier.value 

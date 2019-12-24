@@ -7,7 +7,9 @@ CodeSystem:  	ORGTYPE =  http://hl7.org/fhir/ValueSet/organization-type
 
 // Organization
 Entry: Organization
-Description: "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice."
+Description: "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice.
+
+Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.nae.text"
 Property: PN_Identifier 0..*
 Property: Qualification 0..*
 Property: TViaIntermediary 0..*
@@ -383,7 +385,11 @@ Value: HealthcareService
 Entry: Network
 Description: "A Network refers to a healthcare provider insurance network. A healthcare provider insurance network is an aggregation of organizations and individuals that deliver a set of services across a geography through health insurance products/plans. A network is typically owned by a payer.
 
-In the PlanNet IG, individuals and organizations are represented as participants in a PLan-Net Network through the practitionerRole and Plan-Net-organizationAffiliation resources, respectively."
+In the PlanNet IG, individuals and organizations are represented as participants in a PLan-Net Network through the practitionerRole and Plan-Net-organizationAffiliation resources, respectively.
+
+
+Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.nae.text"
+
 Property: PN_Identifier 0..*
 Property: Location-reference 0..*
 Property: PartOf 1..1
@@ -541,6 +547,7 @@ Property: NotAvailable 0..*
 
 Group: PN_Identifier
 Description: "Identifier"
+Property:  IdentifierID 0..1
 Property:  IdentifierStatus 1..1
 Property:  IdentifierUse 0..1
 Property:  IdentifierType 0..1
@@ -553,6 +560,10 @@ Property:  IdentifierAssigner 0..1
 //Parent: Identifier 
 //Description: "PlN Identifier"
 //Property: IdentifierAssigner 0..1
+
+Element: IdentifierID
+Description: "Unique id for inter-element referencing"
+Value: string 
 
 Element: IdentifierStatus
 Description: "An extension indicating the status of an identifier. Appropriate codes include: active, inactive, issued in error, revoked, pending, or unknown"

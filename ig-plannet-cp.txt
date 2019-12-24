@@ -15,6 +15,7 @@ Namespace: plannet
  
 Organization:
  // PN_Identifier MS
+ //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -59,6 +60,7 @@ Organization:
  Practitioner:
  // PN_Identifier MS
   //PN_Identifier.IdentifierStatus MS
+   //PN_Identifier.IdentifierID MS
   PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -115,6 +117,7 @@ Organization:
 
 PractitionerRole:
  //  PN_Identifier MS
+  //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -156,6 +159,7 @@ PractitionerRole:
   NewPatientProfile MS
   Accessibility MS
  // PN_Identifier MS
+  //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -189,6 +193,7 @@ PractitionerRole:
  OrganizationAffiliation:
  //PN_Identifier.IdentifierStatus MS
  //  PN_Identifier MS
+  //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -217,6 +222,7 @@ PractitionerRole:
  Network:
   //PN_Identifier.IdentifierStatus MS
  //  PN_Identifier MS
+  //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -250,6 +256,7 @@ PractitionerRole:
  InsurancePlan:
    //PN_Identifier.IdentifierStatus MS
   // PN_Identifier MS
+   //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -297,6 +304,7 @@ PractitionerRole:
   HealthcareServiceEndpoint MS 
   //PN_Identifier.IdentifierStatus MS
  //  PN_Identifier MS
+  //PN_Identifier.IdentifierID MS
    PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
@@ -348,6 +356,7 @@ PractitionerRole:
  Endpoint:
   UseCase MS 
   //PN_Identifier MS
+   //PN_Identifier.IdentifierID MS
   PN_Identifier.IdentifierUse MS
   PN_Identifier.IdentifierSystem MS
   PN_Identifier.IdentifierType MS
