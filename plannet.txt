@@ -673,7 +673,7 @@ Value: Organization
 Entry: Endpoint
 Description: "The technical details of an endpoint that can be used for electronic services, such as for web services providing XDS.b or a REST endpoint for another FHIR server. This may include any security context information."
 Property: PN_Identifier 0..*
-Property: UseCase 0..*
+Property: EndpointUseCase 0..*
 Property: ManagingOrganization 0..1
 Property: EndpointStatus  1..1
 Property: ConnectionType 1..1
@@ -688,9 +688,18 @@ Property: EndpointAddress 1..1
 Property: EndpointHeader 0..*
 
 
-Element: UseCase
-Description: "UseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
-Value: concept 
+Group: EndpointUseCase
+Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
+Property: UsecaseType 1..1
+Property: UsecaseStandard 0..1
+
+Element: UsecaseType
+Description: "an indication of the type of services supported by the endpoint"
+Value: concept from http://hl7.org/fhir/uv/vhdir/ValueSet/valueset-usecasetype (extensible)
+
+Element: UsecaseStandard
+Description: "a URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
+Value: uri 
 
 Element: EndpointStatus
 Description: "Status"

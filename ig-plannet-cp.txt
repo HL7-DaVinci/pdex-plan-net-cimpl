@@ -354,7 +354,9 @@ PractitionerRole:
 
 
  Endpoint:
-  UseCase MS 
+  EndpointUseCase MS 
+  //EndpointUseCase.UsecaseType MS
+  //EndpointUseCase.UsecaseStandard MS
   //PN_Identifier MS
    //PN_Identifier.IdentifierID MS
   PN_Identifier.IdentifierUse MS
