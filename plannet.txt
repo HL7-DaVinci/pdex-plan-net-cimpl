@@ -10,7 +10,7 @@ Entry: Organization
 Description: "An organization is a formal or informal grouping of people or organizations with a common purpose, such as a company, institution, corporation, community group, or healthcare practice.
 
 Guidance:   When the contact is a department name, rather than a human (e.g., patient help line), include a blank family and given name, and provide the department name in contact.nae.text"
-Property: PN_Identifier 0..*
+Property: PN_Identifier 1..*
 Property: Qualification 0..*
 Property: TViaIntermediary 0..*
 Property: TAvailableTime 0..*
@@ -123,7 +123,7 @@ Value: Endpoint
 // Practitioner
 Entry: Practitioner
 Description: "Practitioner is a person who is directly or indirectly involved in the provisioning of healthcare."
-Property: PN_Identifier 0..*
+Property: PN_Identifier 1..*
 Property: TViaIntermediary 0..*
 Property: TAvailableTime 0..*
 Property: GeoLocation 0..*
@@ -690,14 +690,14 @@ Property: EndpointHeader 0..*
 
 Group: EndpointUseCase
 Description: "EndpointUseCase is an enumeration of the specific use cases (service descriptions) supported by the endpoint"
-Property: UsecaseType 1..1
-Property: UsecaseStandard 0..1
+Property: plannet.Type 1..1
+Property: Standard 0..1
 
-Element: UsecaseType
+Element: Type
 Description: "an indication of the type of services supported by the endpoint"
 Value: concept from http://hl7.org/fhir/uv/vhdir/ValueSet/valueset-usecasetype (extensible)
 
-Element: UsecaseStandard
+Element: Standard
 Description: "a URI to a published standard describing the services supported by the endpoint (e.g. an HL7 implementation guide)"
 Value: uri 
 

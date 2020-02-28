@@ -2,6 +2,16 @@ Grammar:	Map 5.1
 Namespace:	plannet
 Target:		FHIR_R4
 
+PN_Identifier maps to Identifier:
+   IdentifierID maps to id
+   IdentifierUse maps to use
+   IdentifierSystem maps to system
+   IdentifierValue maps to value
+   IdentifierType maps to type
+   IdentifierPeriod maps to period
+   IdentifierAssigner maps to assigner
+   IdentifierType maps to type
+
 // THese map to uscore Resources
 Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization:
   Qualification maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/qualification
@@ -26,16 +36,18 @@ Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-org
   Address.EffectiveTimePeriod maps to address.period 
   OrganizationAlias maps to alias 
   OrganizationEndpoint maps to endpoint 
+  PN_Identifier maps to identifier
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierStatus maps to identifier.extension 
   // PN_Identifier maps to identifier 
   //PN_Identifier.IdentifierID maps to identifier.id 
-    PN_Identifier.IdentifierUse maps to identifier.use 
-  PN_Identifier.IdentifierSystem maps to identifier.system 
-  PN_Identifier.IdentifierValue maps to identifier.value 
-  PN_Identifier.IdentifierType maps to identifier.type 
-  PN_Identifier.IdentifierPeriod maps to identifier.period
-  PN_Identifier.IdentifierAssigner maps to identifier.assigner
-  PN_Identifier.IdentifierType maps to identifier.type
-  PN_Identifier.IdentifierStatus maps to identifier.extension 
+  //  PN_Identifier.IdentifierUse maps to identifier.use 
+  //PN_Identifier.IdentifierSystem maps to identifier.system 
+  //PN_Identifier.IdentifierValue maps to identifier.value 
+  //PN_Identifier.IdentifierType maps to identifier.type 
+  //PN_Identifier.IdentifierPeriod maps to identifier.period
+  //PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  //PN_Identifier.IdentifierType maps to identifier.type
   OrganizationActive maps to active 
   OrganizationName maps to name 
   GeoLocation maps to address.extension 
@@ -57,16 +69,9 @@ Organization maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-org
  
 
 Practitioner maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner:
-   //  PN_Identifier maps to identifier 
-  //PN_Identifier.IdentifierID maps to identifier.id 
-   PN_Identifier.IdentifierUse maps to identifier.use 
-  PN_Identifier.IdentifierSystem maps to identifier.system 
-  PN_Identifier.IdentifierValue maps to identifier.value 
-  PN_Identifier.IdentifierType maps to identifier.type 
-  PN_Identifier.IdentifierPeriod maps to identifier.period
-  PN_Identifier.IdentifierAssigner maps to identifier.assigner
-  PN_Identifier.IdentifierType maps to identifier.type
-  //PN_Identifier.IdentifierStatus maps to identifier.extension 
+ PN_Identifier maps to identifier
+ PN_Identifier.IdentifierAssigner maps to identifier.assigner
+ PN_Identifier.IdentifierStatus maps to identifier.extension 
   PractitionerName.HumanName maps to name
   PractitionerActive maps to active 
   PractitionerCommunication maps to communication 
@@ -128,15 +133,8 @@ PractitionerRole maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core
    //AvailableTime maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
    TAvailableTime maps to telecom.extension http://hl7.org/fhir/uv/vhdir/StructureDefinition/contactpoint-availabletime
    TViaIntermediary maps to telecom.extension 
- //   PN_Identifier maps to identifier 
- //PN_Identifier.IdentifierID maps to identifier.id 
-    PN_Identifier.IdentifierUse maps to identifier.use 
-  PN_Identifier.IdentifierSystem maps to identifier.system 
-  PN_Identifier.IdentifierValue maps to identifier.value 
-  PN_Identifier.IdentifierType maps to identifier.type 
-  PN_Identifier.IdentifierPeriod maps to identifier.period
+  PN_Identifier maps to identifier
   PN_Identifier.IdentifierAssigner maps to identifier.assigner
-  PN_Identifier.IdentifierType maps to identifier.type
   PractitionerRoleQualification maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/practitioner-qualification
   PractitionerRoleActive maps to active
   PractitionerRoleSpecialty maps to specialty 
@@ -171,15 +169,8 @@ Location maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-locatio
   NewPatientProfile maps to http://hl7.org/fhir/uv/vhdir/StructureDefinition/newpatientprofile
   TViaIntermediary maps to telecom.extension
   TAvailableTime maps to telecom.extension 
- //  PN_Identifier maps to identifier 
-  //PN_Identifier.IdentifierID maps to identifier.id 
-    PN_Identifier.IdentifierUse maps to identifier.use 
-  PN_Identifier.IdentifierSystem maps to identifier.system 
-  PN_Identifier.IdentifierValue maps to identifier.value 
-  PN_Identifier.IdentifierType maps to identifier.type 
-  PN_Identifier.IdentifierPeriod maps to identifier.period
+  PN_Identifier maps to identifier
   PN_Identifier.IdentifierAssigner maps to identifier.assigner
-  PN_Identifier.IdentifierType maps to identifier.type
   LocationStatus maps to status 
   LocationType maps to type 
   LocationName maps to name 
@@ -209,15 +200,9 @@ Location maps to http://hl7.org/fhir/us/core/StructureDefinition/us-core-locatio
 
 // THese map to R4 Resources
 OrganizationAffiliation maps to OrganizationAffiliation:
- //  PN_Identifier maps to identifier 
- //PN_Identifier.IdentifierID maps to identifier.id 
-   PN_Identifier.IdentifierUse maps to identifier.use 
- PN_Identifier.IdentifierSystem maps to identifier.system 
- PN_Identifier.IdentifierValue maps to identifier.value 
- PN_Identifier.IdentifierType maps to identifier.type 
- PN_Identifier.IdentifierPeriod maps to identifier.period
- PN_Identifier.IdentifierAssigner maps to identifier.assigner
- PN_Identifier.IdentifierType maps to identifier.type
+  PN_Identifier maps to identifier
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierStatus maps to identifier.extension 
    PrimaryOrganization maps to organization
     ParticipatingOrganization maps to participatingOrganization
     OrganizationAffiliationNetwork maps to network 
@@ -240,15 +225,9 @@ OrganizationAffiliation maps to OrganizationAffiliation:
   
 
 Network maps to Organization:
- //  PN_Identifier maps to identifier 
- //PN_Identifier.IdentifierID maps to identifier.id 
-   PN_Identifier.IdentifierUse maps to identifier.use 
- PN_Identifier.IdentifierSystem maps to identifier.system 
- PN_Identifier.IdentifierValue maps to identifier.value 
- PN_Identifier.IdentifierType maps to identifier.type 
- PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier maps to identifier
  PN_Identifier.IdentifierAssigner maps to identifier.assigner
- PN_Identifier.IdentifierType maps to identifier.type
+ PN_Identifier.IdentifierStatus maps to identifier.extension 
  NetworkActive maps to active 
   NetworkType maps to type 
   NetworkAddress maps to address 
@@ -282,16 +261,9 @@ Network maps to Organization:
 
 
 InsurancePlan maps to InsurancePlan:
-  //   Identifier maps to identifier (slice on = type.coding.code; slice strategy = includes)
- //  PN_Identifier maps to identifier 
- //PN_Identifier.IdentifierID maps to identifier.id 
-   PN_Identifier.IdentifierUse maps to identifier.use 
- PN_Identifier.IdentifierSystem maps to identifier.system 
- PN_Identifier.IdentifierValue maps to identifier.value 
- PN_Identifier.IdentifierType maps to identifier.type 
- PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier maps to identifier
  PN_Identifier.IdentifierAssigner maps to identifier.assigner
- PN_Identifier.IdentifierType maps to identifier.type
+ PN_Identifier.IdentifierStatus maps to identifier.extension 
  InsurancePlanStatus maps to status 
   InsurancePlanType maps to type 
   InsurancePlanName maps to name 
@@ -324,15 +296,9 @@ InsurancePlan maps to InsurancePlan:
 
 HealthcareService maps to HealthcareService:
  //HealthcareServiceIdentifier.IdentifierStatus maps to identifier.extension
- // PN_Identifier maps to identifier 
- //PN_Identifier.IdentifierID maps to identifier.id 
- PN_Identifier.IdentifierUse maps to identifier.use 
- PN_Identifier.IdentifierSystem maps to identifier.system 
- PN_Identifier.IdentifierValue maps to identifier.value 
- PN_Identifier.IdentifierType maps to identifier.type 
- PN_Identifier.IdentifierPeriod maps to identifier.period
+ PN_Identifier maps to identifier
  PN_Identifier.IdentifierAssigner maps to identifier.assigner
- PN_Identifier.IdentifierType maps to identifier.type
+ PN_Identifier.IdentifierStatus maps to identifier.extension 
  HealthcareServiceProvidedBy maps to providedBy
  HealthcareServiceLocation maps to location
  HealthcareServiceType maps to type 
@@ -386,19 +352,13 @@ HealthcareService maps to HealthcareService:
 
 Endpoint maps to Endpoint:
     ManagingOrganization maps to managingOrganization 
-    EndpointUseCase maps to extension 
+    EndpointUseCase maps to extension
     constrain contact.system to 1..1
     constrain  contact.value to 1..1
   EndpointContact maps to contact 
-  //PN_Identifier maps to identifier 
- //PN_Identifier.IdentifierID maps to identifier.id 
-  PN_Identifier.IdentifierUse maps to identifier.use 
- PN_Identifier.IdentifierSystem maps to identifier.system 
- PN_Identifier.IdentifierValue maps to identifier.value 
- PN_Identifier.IdentifierType maps to identifier.type 
- PN_Identifier.IdentifierPeriod maps to identifier.period
- PN_Identifier.IdentifierAssigner maps to identifier.assigner
- PN_Identifier.IdentifierType maps to identifier.type
+  PN_Identifier maps to identifier
+  PN_Identifier.IdentifierAssigner maps to identifier.assigner
+  PN_Identifier.IdentifierStatus maps to identifier.extension 
   EndpointContact.ContactPoint.Purpose maps to contact.use
   EndpointContact.ContactPoint.Type maps to contact.system
    EndpointContact.ContactPoint.PriorityRank maps to contact.rank
